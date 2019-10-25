@@ -1,0 +1,57 @@
+	 MARCIAL ORTIZ PEDRO SINUHE
+
+<p style="text-align: center;">ACCEDER A LOS ELEMENTOS DE UN OBJETO</p>
+
+<p id="demo" style="text-align: center;"></p>
+
+<script>
+var objeto = "";
+objeto = {"boleta":"2014030776",
+			"industria":5,
+			"balance":{
+				"activo":{
+					"bancos":2395,
+					"insumo1":289,
+					"insumo2":213,
+					"mercancias":2377,
+					"en_proceso":1196,
+					"clientes":3170,
+					"infraestructura":22974
+				},
+				"pasivo":{
+					"proveedores":3175,
+					"hipotecas":16280,
+					"capital_social":7448
+				},
+				"capital":{
+					"utilidades":32614-26903
+				}
+			}
+		};
+
+
+document.getElementById("demo").innerHTML = 
+"boleta: "+ objeto.boleta + "<br>" 
++"industria: "+ objeto.industria + "<br><br>ACTIVO:<br>"
++ "bancos: "+ objeto.balance.activo.bancos + "<br>"
++ "insumo1: "+objeto.balance.activo.insumo1 + "<br>"
++ "insumo2: "+objeto.balance.activo.insumo2 + "<br>"
++ "en_proceso: "+objeto.balance.activo.en_proceso + "<br>"
++ "mercancias: "+objeto.balance.activo.mercancias + "<br>"
++ "clientes: "+objeto.balance.activo.clientes + "<br>"
+
++ "infraestructura: "+objeto.balance.activo.infraestructura + "<br><br>PASIVO:<br>"
++ "proveedores: "+objeto.balance.pasivo.proveedores + "<br>"
++ "hipotecas: "+objeto.balance.pasivo.hipotecas + "<br>"
+
++ "capital_social: "+objeto.balance.pasivo.capital_social + "<br><br>RUBRO CAPITAL:<br>"
++ "utilidades: "+objeto.balance.capital.utilidades + "<br>"+"<br><br>Marcial Ortiz Pedro Sinuhe";
+
+
+
+
+
+</script>
+
+</body>
+</html>
