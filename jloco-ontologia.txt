@@ -1,24 +1,27 @@
 Prolog:
-ontologia:- read(X), write('"'), write(X),write('":{'),objeto,write('}').
-objeto:- write('"'),read(X), write(X),write('":{'),atributo,write('}').
+ontologia:-read(X), write('"'), write(X),write('":{'),objeto,write('}').
+objeto:- write('"'),read(X), write(X),write('":{'),atributo,write('}'),read(Z), Z='objeto' -> write(','),objeto;write('').
 atributo:- write('"'),read(X), write(X), write('":'),tipoatributo(X). 
 tipoatributo(M):- read(X), (X='metodo'->metodo(M); b1(X)).
 b1(X):- X='numero'->numero; b2(X).
 b2(X):- X='cadena'->cadena;write('error').
-cadena:- read(X), write('"'), write(X), write('",').
-numero:-read(X), write(X).
+cadena:- read(X), write('"'), write(X),read(W), W='atrib' -> write('",'),atributo;write('"').
+numero:-read(X), write(X),read(W), W='atrib' -> write(','),atributo;write('}').
 metodo(M):- write('"function() {'),a2,write(' return '), write(M), write(';}"').
 a2:- read(X), (X='decision'->decision;a3(X)).
 a3(X):- X='asignacion' -> asignacion;(a4(X)).
-a4(X):- X='finelse' -> write('} else ');(a5(X)).
-a5(X):- X='fin' -> write('}');(write('0'),write(X)).
+a4(X):- X='fin' -> write('');(write('ERROR: '),write(X)).
 asignacion:- read(X), write(X), write('='), read(Y), write(Y), write(';'),a2.
-decision:- write('if('),condicion,write('){'), verdadero,falso.
+decision:- write('if('),condicion,write(')'), verdadero,falso.
 condicion:-read(X), write(X).
-verdadero:- a2.
-falso:- a2.
+verdadero:- write('{'),a2,write('}').
+falso:- write('else {'),a2,write('}').
 :- ontologia.
 
+
+onto.
+
+objeto.
 isan.
 metodo.
 asignacion.
@@ -67,10 +70,26 @@ asignacion.
 isan.
 precio*(tasa/100).
 fin.
+objeto.
+objetohermano.
+letras.
+cadena.
+hola.
+atrib.
+numeros.
+numero.
+5.
+atrib.
+otroatributo.
+numero.
+10.
+atrib.
+letras2.
+cadena.
+hello.
+fin.
+
+
 
 JSON:
-"ontologia":{"objeto":{"isan":"function() {precio=273;if(precio=273){tasa=2;isan=precio* (tasa/180);}
-else if(precio<329){tasa=5;isan=precio* (tasa/180);}
-else if(precio<384){tasa=10;isan=precio* (tasa/180);}
-else if(precio<494){tasa=15;isan=precio* (tasa/180);}
-else {isan=0;} return isan;}"}}
+"onto":{"objeto":{"isan":"function() {precio=273;if(precio<274964.77){tasa=2;isan=precio* (tasa/100);}else {if(precio<329957.66){tasa=5;isan=precio* (tasa/100);}else {if(precio<384950.77){tasa=10;isan=precio* (tasa/100);}else {if(precio<494936.37){tasa=15;isan=precio* (tasa/100);}else {tasa=17;isan=precio* (tasa/100);}}}} return isan;}"},"objetohermano":{"letras":"hola","numeros":5,"otroatributo":10,"letras2":"hello"}}
