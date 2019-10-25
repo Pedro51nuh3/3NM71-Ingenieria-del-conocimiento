@@ -70,6 +70,8 @@ asignacion.
 isan.
 precio*(tasa/100).
 fin.
+
+
 objeto.
 objetohermano.
 letras.
