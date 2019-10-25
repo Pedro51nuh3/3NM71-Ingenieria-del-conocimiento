@@ -18,6 +18,7 @@ verdadero:- write('{'),a2,write('}').
 falso:- write('else {'),a2,write('}').
 :- ontologia.
 
+CONSOLA:
 
 onto.
 
@@ -92,6 +93,7 @@ hello.
 fin.
 
 
+CADENA:
 
 JSON:
 "onto":{"objeto":{"isan":"function() {precio=273;if(precio<274964.77){tasa=2;isan=precio* (tasa/100);}else {if(precio<329957.66){tasa=5;isan=precio* (tasa/100);}else {if(precio<384950.77){tasa=10;isan=precio* (tasa/100);}else {if(precio<494936.37){tasa=15;isan=precio* (tasa/100);}else {tasa=17;isan=precio* (tasa/100);}}}} return isan;}"},"objetohermano":{"letras":"hola","numeros":5,"otroatributo":10,"letras2":"hello"}}
