@@ -1,0 +1,57 @@
+Nombre: Elizalde Barranco Daniela
+Secuencia: 3NM71
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1><p style="text-align: center;">Acceder a los elementos de un objeto</p></h1>
+
+<p id="demo" style="text-align: center;"></p>
+
+<script>
+var objeto = "";
+objeto = {"boleta":"2014030364",
+			"industria":4,
+			"balance":{
+				"activo":{
+					"bancos":942,
+					"insumo1":105,
+					"insumo2":91,
+					"mercancias":863,
+					"en_proceso":528,
+					"clientes":1435,
+					"infraestructura":9413
+				},
+				"pasivo":{
+					"proveedores":1304,
+					"hipotecas":6223,
+					"capital_social":3569
+				},
+				"capital":{
+					"utilidades":13377-11096
+				}
+			}
+		};
+
+document.getElementById("demo").innerHTML = 
+"industria: "+ objeto.industria + "<br>"
++ "boleta: "+ objeto.boleta + "<br><h1>Activo</h1>" 
++ "<br>bancos: "+ objeto.balance.activo.bancos + "<br>"
++ "insumo1: "+objeto.balance.activo.insumo1 + "<br>"
++ "insumo2: "+objeto.balance.activo.insumo2 + "<br>"
++ "en_proceso: "+objeto.balance.activo.en_proceso + "<br>"
++ "mercancias: "+objeto.balance.activo.mercancias + "<br>"
++ "clientes: "+objeto.balance.activo.clientes + "<br>"
+
++ "infraestructura: "+objeto.balance.activo.infraestructura + "<h1>Pasivo<br></h1>"
++ "proveedores: "+objeto.balance.pasivo.proveedores + "<br>"
++ "hipotecas: "+objeto.balance.pasivo.hipotecas + "<br>"
+
++ "capital_social: "+objeto.balance.pasivo.capital_social + "<h1>Capital</h1>"
++ "utilidades: "+objeto.balance.capital.utilidades + "<br>";
+</script>
+
+</body>
+</html>
