@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p style="text-align: center;">Acceder a los elementos de un objeto</p>
+
+<p id="demo" style="text-align: center;"></p>
+
+<script>
+var objeto = "";
+objeto = {"boleta":"2016602237",
+			"industria":1,
+			"balance":{
+				"activo":{
+					"bancos":1371,
+					"insumo1":192,
+					"insumo2":124,
+					"mercancias":1438,
+					"en_proceso":700,
+					"clientes":2109,
+					"infraestructura":14377
+				},
+				"pasivo":{
+					"proveedores":2017,
+					"hipotecas":10671,
+					"capital_social":5329
+				},
+				"capital":{
+					"utilidades":20311-18017
+				}
+			}
+		};
+
+document.getElementById("demo").innerHTML = 
+"industria: "+ objeto.industria + "<br>"
++ "boleta: "+ objeto.boleta + "<br><br>ACTIVO:<br>" 
++ "bancos: "+ objeto.balance.activo.bancos + "<br>"
++ "insumo1: "+ objeto.balance.activo.insumo1 + "<br>"
++ "insumo2: "+ objeto.balance.activo.insumo2 + "<br>"
++ "en_proceso: "+ objeto.balance.activo.en_proceso + "<br>"
++ "mercancias: "+ objeto.balance.activo.mercancias + "<br>"
++ "clientes: "+ objeto.balance.activo.clientes + "<br>"
+
++ "infraestructura: "+ objeto.balance.activo.infraestructura + "<br><br>PASIVO:<br>"
++ "proveedores: "+ objeto.balance.pasivo.proveedores + "<br>"
++ "hipotecas: "+ objeto.balance.pasivo.hipotecas + "<br>"
+
++ "capital_social: "+ objeto.balance.pasivo.capital_social + "<br><br>RUBRO CAPITAL:<br>"
++ "utilidades: "+ objeto.balance.capital.utilidades + "<br>";
+</script>
+
+</body>
+</html>
