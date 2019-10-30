@@ -24,6 +24,14 @@ CADENA:
 
 QUERIES:
 
+Sacar todas las probabilidades
+select    materia, industria, count(*)/(select  count(*) from empresas where industria in (select distinct industria from empresas ) ) as proba from empresas where materia in (select distinct materia from empresas) group by materia, industria
+
+
+
+
+
+
 select distinct materia from empresas ->empresas
   
 select  count(*) from empresas where materia = 'ingenieria del conocimiento'-->38
@@ -36,4 +44,4 @@ select   count(*)/(select  count(*) from empresas ) as proba from empresas where
      
 select   count(*)/(select  count(*) from empresas ) as proba from empresas where materia in (select distinct materia from empresas) group by materia --> probabilidades de cada una
 
-select    materia, industria, count(*)/(select  count(*) from empresas where industria in (select distinct industria from empresas ) ) as proba from empresas where materia in (select distinct materia from empresas) group by materia, industria
+
